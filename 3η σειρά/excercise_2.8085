@@ -1,0 +1,66 @@
+	IN 10H
+	MVI A,10H 	;Setup display
+	STA 0B00H
+	STA 0B01H
+	STA 0B02H
+	STA 0B03H
+	STA 0B04H
+	STA 0B05H
+	MVI A,0DH 	;Initialization of Interupt mask
+	SIM
+	EI 
+
+WAIT:
+	PUSH D
+	CALL DCD	;Keep the display on
+	POP D
+	JMP WAIT
+INTR_ROUTINE:
+	CALL KIND 	;Insert units from keyboard
+	STA 0B00H 	;Store units in the 1st segment display
+	MOV L,A 	;Store A temporarily until we get the tens digit
+	CALL KIND	;Insert tens from keyboard
+	STA 0B01H 	;Store tens in the 2nd segment display
+	RLC 		;Rotate left 4 times to move the tens' digit to the 4 MSBs
+	RLC
+	RLC
+	RLC
+	ORA L 		;Store the whole number in one register
+	MOV L,A	;Save the number to L
+	EI
+	MOV A,L
+	CALL DISPLAY
+	CMP D 		;Compare with K1
+	JC RANGE1 	;A<K1?
+	JZ RANGE1 	;A=K1?
+	CMP E 		;Compare with K2
+	JC RANGE2 	;A<K2?
+	JZ RANGE2 	;A=K2?
+	MVI A,FBH 	;[0...K1] => 1st LED
+	STA 3000H	;Turn on the 1st LED
+	RET
+RANGE1:
+	MVI A,FEH 	;(K1...K2] => 2nd LED
+	STA 3000H	;Turn on the 2nd LED
+	RET
+RANGE2:
+	MVI A,FDH 	;(K2...FFH] => 3ï LED
+	STA 3000H	;Turn on the 3rd LED
+	RET
+DISPLAY:
+	LXI D,0B00H   ;For STDM
+	PUSH PSW
+	PUSH H
+	PUSH D
+	PUSH B
+	CALL STDM
+	CALL DCD
+	POP B
+	POP D
+	POP H
+	POP PSW
+	MVI D,20H 	;K1
+	MVI E,40H 	;K2
+	RET
+
+	END
