@@ -1,0 +1,61 @@
+MVI A,20H ; μασκα διακοπων
+SIM
+LXI H,0000H ; συσσωρευτης δεδομενων
+MVI C,20H ; 32 δεκαδικο στον μετρητη δεδομενων
+EI
+
+ADDR:
+MOV A,C
+CPI 00H
+JNZ ADDR
+DI
+DAD H
+DAD H 
+DAD H
+DAD H
+DAD H 
+MOV A,L
+ANI 80H
+MVI L,00H
+CPI 00H
+	
+BACK:
+HLT
+
+
+002C:
+JMP RST5.5
+
+
+
+RST5.5:
+PUSH PSW
+MOV A,C
+ANI 01H 
+JPO 4MSB
+IN 20H
+ANI 0FH
+MOV B,A
+JMP 4LSB
+
+
+4MSB:
+IN 20H
+ANI 0FH
+RLC
+RLC
+RLC
+RLC
+ORA B
+MVI D,00H
+MOV E,A
+DAD D
+
+4LSB:
+POP PSW
+DCR C
+EI
+RET
+      
+
+END
