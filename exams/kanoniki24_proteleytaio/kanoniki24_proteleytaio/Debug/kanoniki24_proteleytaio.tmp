@@ -1,0 +1,34 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega16"</DEVICE>
+ <WORKING_DIR>C:\Users\nikos\OneDrive\Υπολογιστής\Y\Sistimata_mikroepeksergaston\exams\kanoniki24_proteleytaio\kanoniki24_proteleytaio\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\nikos\OneDrive\Υπολογιστής\Y\Sistimata_mikroepeksergaston\exams\kanoniki24_proteleytaio\kanoniki24_proteleytaio\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\nikos\OneDrive\Υπολογιστής\Y\Sistimata_mikroepeksergaston\exams\kanoniki24_proteleytaio\kanoniki24_proteleytaio\Debug\kanoniki24_proteleytaio.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>kanoniki24_proteleytaio.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>kanoniki24_proteleytaio.map</FILE>
+  <FILE>kanoniki24_proteleytaio.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <begin><FILE>C:\Users\nikos\OneDrive\Υπολογιστής\Y\Sistimata_mikroepeksergaston\exams\kanoniki24_proteleytaio\kanoniki24_proteleytaio\main.asm</FILE><LINE>14</LINE></begin>
+  <handler><FILE>C:\Users\nikos\OneDrive\Υπολογιστής\Y\Sistimata_mikroepeksergaston\exams\kanoniki24_proteleytaio\kanoniki24_proteleytaio\main.asm</FILE><LINE>64</LINE></handler>
+  <main><FILE>C:\Users\nikos\OneDrive\Υπολογιστής\Y\Sistimata_mikroepeksergaston\exams\kanoniki24_proteleytaio\kanoniki24_proteleytaio\main.asm</FILE><LINE>39</LINE></main>
+  <input_one><FILE>C:\Users\nikos\OneDrive\Υπολογιστής\Y\Sistimata_mikroepeksergaston\exams\kanoniki24_proteleytaio\kanoniki24_proteleytaio\main.asm</FILE><LINE>46</LINE></input_one>
+  <input_two><FILE>C:\Users\nikos\OneDrive\Υπολογιστής\Y\Sistimata_mikroepeksergaston\exams\kanoniki24_proteleytaio\kanoniki24_proteleytaio\main.asm</FILE><LINE>53</LINE></input_two>
+  <brains><FILE>C:\Users\nikos\OneDrive\Υπολογιστής\Y\Sistimata_mikroepeksergaston\exams\kanoniki24_proteleytaio\kanoniki24_proteleytaio\main.asm</FILE><LINE>76</LINE></brains>
+  <monos><FILE>C:\Users\nikos\OneDrive\Υπολογιστής\Y\Sistimata_mikroepeksergaston\exams\kanoniki24_proteleytaio\kanoniki24_proteleytaio\main.asm</FILE><LINE>88</LINE></monos>
+  <not_monos><FILE>C:\Users\nikos\OneDrive\Υπολογιστής\Y\Sistimata_mikroepeksergaston\exams\kanoniki24_proteleytaio\kanoniki24_proteleytaio\main.asm</FILE><LINE>95</LINE></not_monos>
+ </LABELS>
+</ASSEMBLER_INFO>

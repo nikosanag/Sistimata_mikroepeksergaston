@@ -1,0 +1,118 @@
+StackInit:
+lxi sp,0950h
+lxi b,0000h
+push b
+lxi b,0000h
+
+jmp main
+
+Dataln:
+in 20h
+mov b,a
+push b
+
+
+
+
+Mask:
+push a
+mov a,b
+ani 1Eh
+RRC
+STA 0850h
+pop a
+ret
+
+SOP:
+push a
+push b
+mov A,E
+ani 01h
+mov B,A
+mov A,E
+RRC
+ANI 01H
+ANA B
+MOV B,A
+
+MOV A,E
+RRC
+RRC
+ANI 01H
+MOV C,A
+MOV A,E
+RRC 
+RRC
+RRC
+ANI 01H
+ANA C
+ORA B
+STA 0851H
+
+
+pop b
+pop a
+ret
+
+
+
+
+
+
+
+
+
+
+
+
+
+mvi a,0Eh
+sim 
+ei
+
+main:
+in 20h
+mov b,a
+call Mask
+lda 0850h
+ANI 0CH
+mov E,A
+call SOP
+LDA 0851H
+CPI 01H
+JZ 81_VAL
+mvi a,18H
+cma
+out 30h
+jmp main
+
+81_VAL:
+mvi A,81h
+cma
+out 30h
+jmp main
+
+rst5.5:
+push B
+lxi b,01F4h
+call delb
+call delb
+call delb
+call delb
+call delb
+call delb
+call delb
+call delb
+call delb
+call delb
+pop B
+ret
+
+
+
+
+
+
+
+
+
